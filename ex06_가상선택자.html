@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p::before {}
+
+        p::after {
+            content: "|";
+            color: blue;
+            width: 10;
+            height: 10;
+            margin-left: 10px;
+            padding: 5px;
+            background-color: lightgray;
+        }
+
+        p {
+            margin: 5px 5px 5px 5px;
+            color: red;
+            font-weight: 600;
+        }
+
+        h1#test1 {
+            color: blueviolet;
+        }
+
+        h1#test1:hover {
+            color: green;
+        }
+
+        h1#test1:active {
+            color: blue;
+        }
+
+        input[type="text"]:focus {
+            background-color: lightgreen;
+        }
+
+        p {
+            color: brown !important;
+            /* 강제적용법 important 최상위로 적용 */
+        }
+    </style>
+</head>
+
+<body>
+    <p>Lorem ipsum</p>
+
+    <h1 id=":test1">test1</h1>
+
+    <input type="text" />
+
+</body>
+
+</html>

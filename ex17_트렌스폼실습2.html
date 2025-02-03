@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>트렌스폼실습2</title>
+    <style>
+        body {
+            text-align: center;
+        }
+
+        span {
+            font-size: 30px;
+            font-weight: 800;
+            color: white;
+            line-height: 120px;
+            display: inline-block;
+        }
+
+        header {
+            font-weight: bold;
+            font-size: 24px;
+            margin: 30px 0;
+        }
+
+        .box {
+            margin-left: auto;
+            margin-right: auto;
+            width: 600px;
+            height: 120px;
+            /* border: 1px solid black; */
+            background-image: linear-gradient(red, orange);
+        }
+
+        .box:hover span {
+            transform: translateY(-20px);
+        }
+
+        .box :nth-child(1) {
+            transition: 0.4s 0s;
+        }
+
+        .box :nth-child(2) {
+            transition: 0.4s 0.1s;
+        }
+
+        .box :nth-child(3) {
+            transition: 0.4s 0.2s;
+        }
+
+        .box :nth-child(4) {
+            transition: 0.4s 0.3s;
+        }
+
+        .box :nth-child(5) {
+            transition: 0.4s 0.4s;
+        }
+
+        .box :nth-child(6) {
+            transition: 0.4s 0.5s;
+        }
+
+        .box :nth-child(7) {
+            transition: 0.4s 0.6s;
+        }
+
+        .box :nth-child(8) {
+            transition: 0.4s 0.7s;
+        }
+
+        .box :nth-child(9) {
+            transition: 0.4s 0.8s;
+        }
+    </style>
+</head>
+
+<body>
+    <header> 박스 위에 마우스를 올려보세요!</header>
+    <div class="box">
+        <span>T</span>
+        <span>R</span>
+        <span>A</span>
+        <span>N</span>
+        <span>S</span>
+        <span>F</span>
+        <span>O</span>
+        <span>R</span>
+        <span>M</span>
+    </div>
+
+</body>
+
+</html>

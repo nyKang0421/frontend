@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- head는 웹 정보에 대한 내용 -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        h1,
+        h2,
+        h3 {
+            /* *은 전체를 의미 */
+            border: 1px solid black;
+        }
+
+        h1+h2 {
+            color: blue;
+        }
+
+        h1~h3 {
+            /* +는 h1 바로 뒤에 오는 h2에 적용 */
+            /* ~은 h1 뒤에 인접해서 오는 h2에 적용 */
+            color: red;
+        }
+
+        .myDiv>h3 {
+            /* >는 직계 자손에게만 적용 : 바로 아래만 적용 */
+            background-color: pink;
+            width: 100px;
+            height: 100px;
+        }
+
+        div h3 {
+            color: purple;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 형1제는 +로 한번에 작성 가능 h1+h2+h3 -->
+    <h1>test1</h1>
+    <h2>test2</h2>
+    <h3>test3</h3>
+    <h2>test2-2</h2>
+    <h3>test4</h3>
+    <div class="myDiv">
+        <h3>test5</h3>
+        <div>
+            <h3>test5-2</h3>
+        </div>
+        <h3>test5-3</h3>
+    </div>
+
+</body>
+
+</html>

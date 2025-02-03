@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>트렌지션실습1</title>
+    <style>
+        .red-box {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            /* 0.5초 후에 바꿔줌 */
+            transition-delay: 0.5s;
+            /* 1초동안에 걸쳐서 바꿔줌 */
+            transition-duration: 1s;
+
+        }
+
+        .red-box:hover {
+            background-color: blue;
+        }
+
+        .container .bar {
+            width: 10px;
+            transition-property: width;
+            transition-duration: 5s;
+        }
+
+        .container:hover .bar {
+            width: 110px;
+        }
+
+        .container {
+            padding: 10px;
+            color: white;
+            border: 2px solid black;
+        }
+
+        .bar {
+            width: 100px;
+            background-color: red;
+            transition-property: width;
+            transition-duration: 1s;
+            margin-bottom: 10px;
+        }
+
+        .container:hover .bar {
+            width: 200px;
+        }
+
+        .bar:nth-child(1) {
+            transition-timing-function: linear;
+        }
+
+        .bar:nth-child(2) {
+            transition-timing-function: ease;
+        }
+
+        .bar:nth-child(3) {
+            transition-timing-function: ease-in
+        }
+
+        .bar:nth-child(4) {
+            transition-timing-function: ease-out;
+        }
+
+        .bar:nth-child(5) {
+            transition-timing-function: ease-in-out;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="red-box"></div>
+    <div class="container">
+        <div class="bar">linear</div>
+        <div class="bar">ease</div>
+        <div class="bar">ease-in</div>
+        <div class="bar">ease-out</div>
+        <div class="bar">ease-in-out</div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>포지션</title>
+
+    <style>
+        /* 
+        포지션
+        static: 기본값 : top, left, right, bottom 사용 불가 : 좌표값 설정
+        absolute: 상단 부모박스를 기준으로 좌표를 설정, 만약 부모 설정 안하면 body가 부모
+        relative : 부모 박스를 기준으로 상위박스가 움직이면(좌표 변동 ) 자식요소 같이 움직임
+        fixed : 상단 박스가 없으면 화면의 절대적인 위치가 부모가 된다.
+        sticky : 부모 박스의 상대적 위치값에서 화면의 기준으로 고정된다
+        */
+
+        div {
+            width: 50px;
+            height: 50px;
+            border: 1px solid green;
+            background-color: yellowgreen;
+            margin-bottom: 10px;
+
+        }
+
+        .container {
+            border: 1px solid black;
+            width: 600px;
+            height: 400px;
+            /* 배경에 투명색을 줄수도 있음 */
+            background-color: transparent;
+            position: relative;
+        }
+
+        /* absolute 값은 보통 부모에  */
+
+        .box {
+            /* position: absolute; */
+            /* position: fixed; */
+            position: sticky;
+            text-align: center;
+            line-height: 50px;
+            background-color: orange;
+            top: 0px;
+            /* left: 100px; */
+            left: 0px;
+        }
+
+        .box2 {
+            position: relative;
+            background-color: red;
+            z-index
+            /* z-index 는 겹칠시 보여주는 우선 순위 
+            z-index 값이 클수로 위에 온다*/
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div></div>
+        <div class="box">박스</div>
+        <div class="box2"></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+
+</body>
+
+</html>

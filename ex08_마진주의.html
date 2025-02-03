@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        p {
+            border: 2cap solid red;
+            background-color: yellow;
+            padding: 10px;
+        }
+
+        #first {
+            margin-bottom: 20px;
+        }
+
+        #second {
+            margin-top: 30px;
+        }
+
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: lightgreen;
+            margin: 5px;
+            text-align: center;
+            line-height: 100px;
+        }
+
+        #third {
+            /* width + height 우리가 선택한 값으로 고정
+            : padding이 영향을 미치지 않음 */
+            box-sizing: border-box;
+            width: 400px;
+            padding: 5px;
+            margin-bottom: 100px;
+        }
+
+        #fourth {
+            /* width+height 포함하여 계산 */
+            width: 400px;
+            box-sizing: content-box;
+            padding: 10px;
+        }
+
+        h1 {
+            border: 1px solid black;
+        }
+
+        span {
+            border: 2px dashed navy;
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+            display: block;
+            /* span은 인라인 요소라 높이 넓이 마진에서 위치 값이 적용되지 않지만
+            display를 block으로 지정하여 인라인 요소를 블럭으로 바꿔줌 */
+        }
+    </style>
+</head>
+
+<body>
+
+    <p id="first">test1</p>
+    <p id="second">test2</p>
+
+    <div id="third">Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, alias est dolore fugit officiis
+        doloribus. Minus porro optio aut doloribus error eum, maxime ratione illo velit. Perspiciatis ut quia velit.
+        <h1>test1</h1>
+    </div>
+    <div id="fourth">Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque accusantium facilis itaque
+        repellendus earum dicta, tempore enim magnam numquam debitis! Cupiditate libero impedit possimus numquam ipsa a
+        sequi eaque officia.</div>
+
+    <span>test</span>
+
+</body>
+
+</html>

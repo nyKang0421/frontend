@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .bar {
+            width: 160px;
+            background-color: blue;
+            opacity: 0.6;
+            padding: 30px 10px;
+            color: white;
+            border-radius: 5px;
+            transition-property: width;
+            transition-duration: 3s;
+            transition-timing-function: ease-out;
+        }
+
+        .bar:hover {
+            width: 300px;
+            opacity: 0.3;
+            /* background-color: red; */
+            /* color: black; */
+            /* transition-property: width;
+            transition-duration: 2s; */
+            transition-timing-function: linear;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <p class="bar">마우스를 올리면 길어져요</p>
+    </div>
+
+</body>
+
+</html>
