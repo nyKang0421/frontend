@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        h2,
+        p {
+            padding: 10px;
+        }
+
+        h2 {
+            height: 10px;
+        }
+
+        section {
+            width: 1200px;
+            display: flex;
+        }
+
+        article {
+            flex: 1;
+        }
+
+        article.content1 {
+            background-color: yellow;
+        }
+
+        article.content2 {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .content2>.sub1 {
+            background-color: lightblue;
+            flex: 1;
+        }
+
+
+        .sub2 {
+            background-color: lightpink;
+            flex: 1;
+        }
+
+        @media (max-width:768px) {
+            body {
+                align-items: flex-start;
+            }
+
+            section {
+                /* height: 100%; */
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <article class="content1">
+            <h2>content1</h2>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Similique, sed eos iste, provident voluptatem
+                at quia hic exercitationem iusto, dolorem atque aliquam asperiores quibusdam minus fugit deserunt
+                tempora earum! Commodi!
+                Sed maiores ratione tenetur aut tempora nulla quisquam nam magnam suscipit dignissimos, quibusdam
+                molestias quos. Maxime magnam rem in, velit possimus itaque animi omnis sunt deleniti placeat rerum
+                laborum neque.
+                Numquam nemo, sequi, dicta modi nesciunt harum dolorum enim veniam minus possimus necessitatibus
+                aperiam. Iste eveniet facere modi? Fugit, necessitatibus id. Reiciendis laudantium porro sapiente
+                placeat. Expedita facere vel nam.</p>
+        </article>
+        <article class="content2">
+            <div class="sub1">
+                <h2>sub1</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit corrupti laborum doloremque rem
+                    molestiae, temporibus possimus iure mollitia consectetur veniam voluptatum ipsa eligendi sunt
+                    placeat soluta itaque voluptates quae ex.</p>
+            </div>
+            <div class="sub2">
+                <h2>sub2</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit corrupti laborum doloremque rem
+                    molestiae, temporibus possimus iure mollitia consectetur veniam voluptatum ipsa eligendi sunt
+                    placeat soluta itaque voluptates quae ex.</p>
+            </div>
+        </article>
+    </section>
+
+</body>
+
+</html>
