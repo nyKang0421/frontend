@@ -1,0 +1,124 @@
+/* google web font */
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500&display=swap');
+/* Fontawesome 4.7 */
+@import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+/* reset CSS */
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+a{ text-decoration: none; color: #222;}
+h1,h2,h3,h4,h5,h6{font-weight: normal;}
+button{ cursor: pointer; outline: none; border: none;}
+/* body font-fmaily를 상속받지 않는 태그들  */
+button,input,textarea{font-family: 'Montserrat', sans-serif;}
+body{
+  height: 100vh;
+  font-family: 'Montserrat', sans-serif;
+}
+/* css */
+.container{
+    height: 100%;
+    background-color: #eee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 브라우저 화면 컨텐츠 width : 고정 px */
+/* 모바일에서는 고정을 풀어 상대적으로 설정 */
+.login-form{
+  background-color: #fff;
+  border: 1px solid black;
+  border-radius: 5px;
+  height: 50%;
+  width: 600px;
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  justify-content: space-between;
+  box-shadow: 0 0 20px;
+}
+.login-form>h2{
+  text-transform: capitalize;
+}
+.sns-login{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.btn{
+  padding: 8px;
+  width: 175px;
+  color: #fff;
+  border-radius: 3px;
+  font-size: 12px;
+  display: flex;
+}
+
+.btn.facebook{
+  display: block;
+  background-color: #1877F2;
+}
+.btn.twitter{
+  display: block;
+  background-color: #1DA1F2;
+}
+.btn.google{
+  display: block;
+  background-color: #CD201F;
+}
+
+.field{
+  display: flex;
+}
+.field>label{
+  flex: 1;
+}
+.field input{
+  flex: 4;
+}
+
+.submit-btn{
+  display: flex;
+  flex-direction: row-reverse;
+}
+.btn-submit{
+  padding: 8px;
+  width: 100px;
+  border-radius: 3px;
+  background-color: royalblue;
+  color: #fff;
+}
+
+@media(max-width:768px){
+  .login-form{
+    width: 100vw;
+    height: 70vh;
+  }
+  .sns-login{
+    flex-direction: column;
+  }
+
+  .btn.facebook{
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  .btn.twitter{
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  .btn.google{
+    width: 100%;
+  }
+
+  .field{
+    flex-direction: column;
+  }
+
+  .btn-submit{
+    width: 100%;
+  }
+  
+}

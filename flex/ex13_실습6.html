@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>실습6</title>
+    <style>
+        * {
+            /* reset CSS */
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100vh;
+        }
+
+        h2 {
+            text-transform: capitalize;
+        }
+
+        .container {
+            height: 100vh;
+            display: flex;
+        }
+
+        .container * {
+            display: flex;
+            justify-content: center;
+        }
+
+        .container nav {
+            background-color: lightpink;
+            width: 100px;
+            align-items: center;
+        }
+
+        .container section {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            /* 값을 계산 할때는 calc를 사용 ex) height: calc(100%-200px); */
+        }
+
+        section header,
+        footer {
+            height: 100px;
+            background-color: palevioletred;
+            align-items: center;
+        }
+
+        section main {
+            flex: 1;
+            display: flex;
+        }
+
+        main article {
+            background-color: beige;
+            flex: 1;
+            align-items: center;
+        }
+
+        main aside {
+            width: 80px;
+            background-color: lightgray;
+            align-items: center;
+        }
+
+        /* section footer{} */
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <nav>
+            <h2>nav</h2>
+        </nav>
+        <section>
+            <header>
+                <h2>header</h2>
+            </header>
+            <main>
+                <article>
+                    <h2>aticle</h2>
+                </article>
+                <aside>
+                    <h2>aside</h2>
+                </aside>
+            </main>
+            <footer>
+                <h2>footer</h2>
+            </footer>
+        </section>
+    </div>
+</body>
+
+</html>

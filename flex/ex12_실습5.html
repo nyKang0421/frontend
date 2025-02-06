@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* basicCSS 초기화 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            height: 100vh;
+            border: 2px solid red;
+        }
+
+        section {
+            border: 2px solid blue;
+            display: flex;
+            height: 100%;
+            flex-direction: column;
+
+        }
+
+        section .banner,
+        .header {
+            border: 2px solid green;
+            display: flex;
+            align-items: center;
+            padding: 15px;
+        }
+
+        section .header {
+            background-color: yellow;
+            flex: 1;
+        }
+
+        .banner {
+            background-color: yellowgreen;
+            flex: 1;
+        }
+
+        div {
+            border: 2px solid green;
+            flex: 4;
+            display: flex;
+        }
+
+        div * {
+            padding: 15px;
+        }
+
+        div .navi {
+            width: 150px;
+            min-width: 150px;
+            background-color: lightpink;
+        }
+
+        div main {
+            background-color: lightblue;
+            padding: 0;
+            flex: 1;
+        }
+
+        main .main {}
+
+        main p {}
+    </style>
+
+</head>
+
+<body>
+    <section>
+        <h2 class="header">Header</h2>
+        <h2 class="banner">Banner</h2>
+        <div>
+            <h2 class="navi">Navi</h2>
+            <main>
+                <h2 class="main">Main</h2>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorum voluptatibus molestiae dolorem,
+                    quibusdam beatae ducimus, esse quia maiores repellat eveniet delectus sint ipsam! Qui soluta quas
+                    ullam vitae, possimus dolorum!Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorum
+                    voluptatibus molestiae dolorem,
+                    quibusdam beatae ducimus, esse quia maiores repellat eveniet delectus sint ipsam! Qui soluta quas
+                    ullam vitae, possimus dolorum!Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorum
+                    voluptatibus molestiae dolorem,
+                    quibusdam beatae ducimus, esse quia maiores repellat eveniet delectus sint ipsam! Qui soluta quas
+                    ullam vitae, possimus dolorum!Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorum
+                    voluptatibus molestiae dolorem,
+                    quibusdam beatae ducimus, esse quia maiores repellat eveniet delectus sint ipsam! Qui soluta quas
+                    ullam vitae, possimus dolorum!</p>
+            </main>
+        </div>
+
+
+    </section>
+
+</body>
+
+</html>
