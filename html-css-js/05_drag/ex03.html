@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>드레그 실습</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {}
+
+    .container {
+      display: flex;
+    }
+
+    .container .box {
+      border: 1px solid;
+      margin: 5px;
+      width: 30px;
+      height: 30px;
+      text-align: center;
+      line-height: 30px;
+      font-size: 1.3em;
+      font-weight: bolder;
+    }
+
+    .container .box:hover {
+      border: 1px solid orange;
+    }
+
+
+    .box.check {
+      background-color: red;
+    }
+
+    input {
+      width: 50px;
+      margin: 0 3px;
+      border-radius: none;
+    }
+
+    .trash {
+      margin: 10px 5px;
+      border: 1px solid;
+      width: 300px;
+      height: 100px;
+    }
+  </style>
+
+</head>
+
+<body>
+  <div class="container">
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+  </div>
+  <input type="text">
+  <div class="trash">
+    <!-- trash -->
+  </div>
+</body>
+
+</html>
+
+<script>
+  const $box = document.querySelector('.box');
+  const $input = document.querySelector('input');
+  const $trash = document.querySelector('.trash');
+  const $container = document.querySelector('.container');
+
+  let num = 1;
+
+  function addNum(target) {
+    if (target.innerHTML) return;
+    target.innerHTML = num++;
+  }
+
+  $container.addEventListener('click', e => {
+    addNum(e.target);
+  })
+
+  $input.addEventListener("keydown", (e) => {
+    // console.log(e);
+    // 키보드에서 한글를 입력받았을때 이벤트 중복처리 방지 
+    let str = $input.value;
+    console.log("str : " + str);
+    if (e.isComposing) return;
+    let numList = [...document.querySelectorAll('.box')];
+    // console.log(numList);
+    for (let i = 0; i < numList.length; i++) {
+      if (numList[i].innerHTML == str) {
+        console.log(`${i} : ` + numList[i].innerHTML);
+        numList[i].classList.add('check');
+      }
+    }
+
+    if (numList.find(number => number.innerHTML === $input.value)) {
+      console.log("test");
+
+
+    }
+
+
+
+    if (e.code === 'Enter') {
+      let value = checkInputValue();
+      value && addItemToItems(value);
+    }
+  })
+
+
+
+
+
+
+
+</script>

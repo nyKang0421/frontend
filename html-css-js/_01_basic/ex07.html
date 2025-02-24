@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ex07</title>
+  <style>
+    * {
+      margin: 0;
+    }
+
+    .toggle {
+      margin: 10px;
+    }
+
+    .box {
+      background-color: pink;
+      width: 150px;
+      height: 150px;
+      margin: 0;
+      transform: translateX(-150px);
+    }
+
+    .selected {
+      transform: translateX(0px);
+      background-color: yellowgreen;
+      transition: 2s;
+    }
+
+    .selected.active {
+      transform: translateX(0px);
+    }
+  </style>
+</head>
+
+<body>
+  <button class="toggle">토글</button>
+  <div class="box">
+  </div>
+</body>
+
+</html>
+
+<script>
+  const box = document.querySelector('.box');
+  const btn = document.querySelector('.toggle');
+
+  btn.addEventListener("click", () => {
+    box.classList.add('selected')
+  })
+
+
+</script>

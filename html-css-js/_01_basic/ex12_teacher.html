@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ex12</title>
+</head>
+
+<body>
+  <main>
+    <div>
+      <button class="ascending">오름차순</button>
+      <button class="descending">내림차순</button>
+    </div>
+    <ul class="users"></ul>
+  </main>
+</body>
+
+</html>
+<script>
+  // 데이터
+  const userDataList = [
+    { id: 29, name: '기린' },
+    { id: 2, name: '곰' },
+    { id: 10, name: '여우' },
+    { id: 4, name: '사자' },
+    { id: 101, name: '호랑이' }
+  ];
+
+  function updateData(userList) {
+    if (!userList || !(userList instanceof Array) || userList.length == 0) return;
+    const ul = document.querySelector('.users');
+    let data = '';
+    userList.forEach(user => data += `<li> ${user.id} : ${user.name}</li>`);
+    ul.innerHTML = data;
+  }
+
+  document.querySelector('.ascending').addEventListener("click", () => {
+    let usersAsc = [...userDataList].sort((a, b) => a.id - b.id);
+    updateData(usersAsc);
+    alert('오름차순 정렬 완료')
+  })
+
+  document.querySelector('.descending').addEventListener("click", () => {
+    let usersDes = [...userDataList].sort((a, b) => b.id - a.id);
+    updateData(usersDes);
+    alert('내림차순 정렬 완료')
+  })
+
+
+  updateData(userDataList);
+
+</script>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ex08</title>
+  <script defer src="ex08.js"></script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      width: 100vw;
+      border: 2px solid red;
+      display: grid;
+      grid-template:
+        "s1 s1 s2 s2" 70px
+        "s3 s3 s3 s3" 250px;
+    }
+
+    .container .innput-group {
+      grid-area: s1;
+      border: 2px solid green;
+      display: flex;
+      align-items: center;
+    }
+
+    .innput-group input {
+      margin-left: 20px;
+      border: 2px solid skyblue;
+      border-radius: 5px 0 0 5px;
+      height: 40px;
+    }
+
+    .innput-group button {
+      margin: -2px;
+      border: 2px solid skyblue;
+      border-radius: 0 5px 5px 0;
+      font-size: 16px;
+      padding: 10px;
+    }
+
+    .container .btn-group {
+      grid-area: s2;
+      border: 2px solid blue;
+    }
+
+    .btn-group .btn-start {}
+
+    .btn-group .btn-stop {}
+
+    .container #box {
+      grid-area: s3;
+      border: 2px solid orange;
+    }
+
+    #box ul {
+      list-style-type: none;
+    }
+
+    #box ul li {}
+  </style>
+
+</head>
+
+<body>
+  <div class="container">
+    <div class="innput-group">
+      <input type="text" id="username">
+      <button id="btn-add"> ADD</button>
+    </div>
+    <div class="btn-group">
+      <button id="btn-start">시작</button>
+      <button id="btn-stop">정지</button>
+    </div>
+
+    <div id="box">
+      <ul id="user-list">
+        <li class="item">박연미</li>
+        <li class="item on">둘리</li>
+
+      </ul>
+      <ul id="selected-list">
+        <li class="item fix"> 홍길동</li>
+      </ul>
+    </div>
+  </div>
+
+</body>
+
+</html>

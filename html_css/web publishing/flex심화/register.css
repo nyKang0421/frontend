@@ -30,7 +30,7 @@ body{
 /* 모바일에서는 고정을 풀어 상대적으로 설정 */
 .login-form{
   background-color: #fff;
-  border: 1px solid black;
+  /* border: 1px solid black; */
   border-radius: 5px;
   height: 50%;
   width: 600px;
@@ -38,7 +38,7 @@ body{
   flex-direction: column;
   padding: 30px;
   justify-content: space-between;
-  box-shadow: 0 0 20px;
+  box-shadow: 0 0 20px darkgray;
 }
 .login-form>h2{
   text-transform: capitalize;

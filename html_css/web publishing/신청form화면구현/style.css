@@ -1,0 +1,129 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+a{ text-decoration: none; color: #222;}
+h1,h2,h3,h4,h5,h6{font-weight: normal;}
+button{ cursor: pointer; outline: none; border: none;}
+
+/* body font-fmaily를 상속받지 않는 태그들  */
+button,input,textarea{font-family: 'Montserrat', sans-serif;}
+
+body{
+font-family: 'Montserrat', sans-serif;
+height: 100vh;
+display: flex;
+justify-content: center;
+}
+
+section{
+    width: 1280px;
+}
+
+section .consulting-header{}
+.consulting-header h1{
+    font-weight: 600;
+    text-align: center;
+}
+h1 span{
+    color: red;
+}
+.consulting-header hr{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 100px;
+    border: 0.5px solid aqua;
+}
+.consulting-header p{
+    text-align: center;
+    font-size: 0.5em;
+}
+
+section hr{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 90%;
+}
+
+section .consulting-form{}
+
+.consulting-form form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+form em{
+    color: red
+}
+form .row{
+    margin-bottom: 10px;
+    width: 90%;
+    display: flex;
+}
+.row .field{
+    margin: 0 10px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+.field label{
+    margin-bottom: 3px;
+}
+.field input, select{
+    margin-left: 3px;
+}
+.field input:hover, select:hover{
+    border: 1px solid lightgray;
+    box-shadow: 0 0 4px aqua;
+}
+.field textarea{
+    margin-left: 3px;
+    text-align: none;
+}
+
+form .policy{
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+}
+.policy h4{}
+.policy iframe{
+    border: 2px solid black;
+    border-radius: 3px;
+    margin: 10px 0;
+    padding: 7px;
+}
+.policy .agreement{}
+.agreement input{}
+.agreement label{
+    font-size: 12px;
+    font-weight: 600;
+}
+
+form .btn-submit{
+    padding: 8px;
+    border-radius: 3px;
+    background-color: aqua;
+    margin: 10px;
+}
+
+form .btn-submit:hover{
+    background-color: lightskyblue;
+}
+
+@media screen and (max-width: 767px) {
+    .consulting-header h1{
+        font-size: 0.8em;
+    }
+    .row{
+        flex-direction: column;
+    }
+    .row .field:first-child{
+        margin-bottom: 10px;
+    }
+}

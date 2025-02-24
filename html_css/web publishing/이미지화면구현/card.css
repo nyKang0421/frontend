@@ -1,0 +1,107 @@
+/* google web font */
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500&display=swap');
+/* Fontawesome 4.7 */
+@import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+/* reset CSS */
+*{
+    box-sizing: border-box;
+}
+a{ text-decoration: none; color: #222;}
+h1,h2,h3,h4,h5,h6{font-weight: normal;}
+button{ cursor: pointer; outline: none; border: none;}
+/* body font-fmaily를 상속받지 않는 태그들  */
+button,input,textarea{font-family: 'Montserrat', sans-serif;}
+
+body{
+    margin: 0;;
+    height: 100vh;
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    justify-content: center;
+}
+
+section{
+    width: 980px;
+    /* border: 2px solid red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card{
+    margin: 10px;
+    height: 400px;
+    width: 300px;
+    min-width: 300px;
+    /* border:  2px solid blue; */
+    position: relative;
+    transition: 0.3s;
+    overflow: hidden;
+}
+.card:hover{
+    transform: translatey(-30px);
+}
+
+.card img{
+    height: 100%;
+    width: 100%;
+    /* border: 2px solid yellowgreen; */
+}
+.content{
+    height: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    color: #fff;
+    position: absolute;
+    bottom: -100%;
+    /* visibility: hidden; */
+    transition: 0.3s;
+    
+}
+.card:hover .content{
+    /* visibility: visible; */
+    bottom: 0%;
+}
+
+.card:nth-child(1) .content{
+    background: linear-gradient(to top, crimson, transparent);
+    /* background: linear-gradient(to top, crimson, orange); */
+    /* 괄호 순서는 방향, 1번색, 2번색 */
+    /* 1번색에서 2번색으로 2번이 색이면 색으로 점점 변형 */
+    /* 2번이 transparent 이면 점점 투명하게 변형 */
+}
+.card:nth-child(2) .content{
+    background: linear-gradient(to top, dodgerblue, transparent);
+}
+.card:nth-child(3) .content{
+    background: linear-gradient(to top, yellowgreen, transparent);
+}
+
+.content h2{
+    display: flex;
+    flex-direction: column;
+}
+.content h2 span{
+    color: yellow;
+    font-size: 15px;
+}
+
+.content p{
+    /* border: 1px solid yellowgreen; */
+    width: 90%;
+    font-size: 0.9em;
+}
+
+.sns{
+}
+.sns a{
+    display: inline-block;
+    width: 30px;
+    margin: 20px 5px;
+    padding: 5px;
+    border: 1px solid #fff;
+    border-radius: 30px;
+    color: #fff;
+}

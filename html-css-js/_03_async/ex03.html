@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ex03</title>
+</head>
+
+<body>
+  <h1></h1>
+  <button>중지</button>
+  <button>기록</button>
+  <div class="record"></div>
+
+</body>
+
+
+</html>
+
+<script>
+  const h1 = document.querySelector('h1');
+  const btn = document.querySelectorAll('button');
+  const record = document.querySelector('.record');
+
+  let msec = 0;
+  let dmsec = "";
+  let sec = 0;
+  let dsec = "";
+  let min = 0;
+  let dmin = "";
+  let hour = 0;
+  let dhour = "";
+  const interval = setInterval(() => {
+    // console.log(sec);
+    ++msec;
+    dmsec = msec + "";
+    dsec = sec + "";
+    dmin = min + "";
+    dhour = hour + "";
+    if (msec == 100) {
+      msec = 0;
+      sec++;
+    }
+    if (sec == 60) {
+      sec = 0;
+      min++;
+    }
+    if (min == 60) {
+      min = 0;
+      hour++;
+    }
+    if (msec < 10) dmsec = 0 + dmsec;
+    if (sec < 10) dsec = 0 + dsec;
+    if (min < 10) dmin = 0 + dmin;
+    if (hour < 10) dhour = 0 + dhour;
+
+    h1.innerHTML = `${dhour} : ${dmin} : ${dsec} : ${dmsec}`;
+    // if(sec == 5) sec = 0;
+  }, 10);
+
+  btn[0].addEventListener('click', () => {
+    clearInterval(interval);
+  })
+  btn[1].addEventListener('click', () => {
+    dmsec = msec + "";
+    dsec = sec + "";
+    dmin = min + "";
+    dhour = hour + "";
+    if (msec < 10) dmsec = 0 + dmsec;
+    if (sec < 10) dsec = 0 + dsec;
+    if (min < 10) dmin = 0 + dmin;
+    if (hour < 10) dhour = 0 + dhour;
+    const str = `${dhour} : ${dmin} : ${dsec} : ${dmsec}`;
+    const h3 = document.createElement('h3');
+    h3.innerHTML = str;
+    record.appendChild(h3);
+  })
+
+</script>

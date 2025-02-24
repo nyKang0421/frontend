@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ex08</title>
+  <style>
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .container h3 {}
+
+    .container h4 {}
+
+    .container .quiz {
+      font-size: 1.5em;
+      margin: 10px;
+    }
+
+    .quiz .q {
+      /* border: 1px solid; */
+      font-size: 30px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .q span {
+      margin-right: 10px;
+      font-size: 50px;
+    }
+
+    .wrong {
+      color: red;
+      text-decoration: line-through;
+    }
+
+    .q input {
+      padding: auto;
+      width: 100px;
+      height: 50px;
+      font-size: 30px;
+    }
+
+    .container .bottom {}
+
+    .bottom button {
+      margin: 0 20px;
+      border: none;
+      border-radius: 5px;
+      padding: 10px 20px;
+      background-color: royalblue;
+      color: #fff;
+      font-size: 1.2em;
+    }
+
+    .bottom button:hover {
+      background-color: green;
+      color: #222;
+    }
+
+    .bottom span {
+      font-weight: bold;
+      font-size: 25px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h3>산술 문제를 풀어보세요</h3>
+    <h4>수식을 계산하여 답을 입력하고 채점 버튼을 누르세요</h4>
+    <div class="quiz">
+      <!-- <div class="q">
+        <span>1-1 =</span><input type="number">
+      </div> -->
+    </div>
+    <div class="bottom">
+      <button>채점</button>
+      <span> 0 점</span>
+      <button>다시</button>
+    </div>
+
+
+  </div>
+
+</body>
+
+</html>
+
+<script>
+  const rightArr = [0, 0, 0, 0];
+  // const rightArr = new Array(4);
+
+  function releaseQuiz() {
+    document.querySelector('.quiz').innerHTML = "";
+    for (let i in rightArr) {
+      let num1 = parseInt(Math.random() * 10) + 1;
+      let num2 = parseInt(Math.random() * 10) + 1;
+      let op = parseInt(Math.random() * 4);
+      let mark = "";
+      switch (op) {
+        case 0: mark = "+"; rightArr[i] = num1 + num2; break;
+        case 1: mark = "-"; rightArr[i] = num1 - num2; break;
+        case 2: mark = "*"; rightArr[i] = num1 * num2; break;
+        case 3: mark = "/"; rightArr[i] = parseInt(num1 / num2); break;
+      }
+
+      console.log(`${num1} ${mark} ${num2} = ${rightArr[i]}`);
+
+      let div = document.createElement('div');
+      div.classList.add('q');
+      let span = document.createElement('span');
+      span.innerHTML = `${num1} ${mark} ${num2} =`;
+      let input = document.createElement('input');
+      input.type = "number";
+
+      div.appendChild(span);
+      div.appendChild(input);
+
+      document.querySelector('.quiz').appendChild(div);
+
+    }
+  }
+  releaseQuiz();
+
+  const btns = document.querySelectorAll('button');
+  btns[1].addEventListener("click", releaseQuiz)
+
+  btns[0].addEventListener('click', () => {
+    const qArr = document.querySelectorAll('.q span');
+    const inputArr = document.querySelectorAll(".q input");
+    let score = 0;
+    let idx = 0;
+    inputArr.forEach(input => {
+      if (input.value == rightArr[idx]) {
+        score++;
+        qArr[idx].classList.remove('wrong');
+      } else {
+        qArr[idx].classList.add('wrong');
+      }
+      idx++;
+    })
+    document.querySelector('.bottom span').innerHTML = `${score} 점`;
+  })
+
+</script>

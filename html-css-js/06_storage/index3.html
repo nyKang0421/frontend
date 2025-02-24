@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>실습</title>
+  <style>
+    .save {
+      margin-bottom: 30px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="save">
+    <input type="text">
+    <button>저장하기</button>
+  </div>
+  <div class="delete">
+    <input type="text">
+    <button>삭제하기</button>
+  </div>
+  <hr>
+  <div class="result"></div>
+</body>
+
+</html>
+
+<script>
+  let input_data = [];
+  // let init = true;
+  // if (init) {
+  //   // console.log(localStorage.getItem('input_data'));
+  //   if (localStorage.getItem('input_data')) {
+  //     console.log('check');
+  //     let temp = localStorage.getItem('input_data');
+  //     input_data = JSON.parse(temp);
+  //   }
+  //   init = false;
+  //   console.log(init);
+  //   console.log(input_data)
+  // }
+
+  function init() {
+    if (localStorage.getItem('input_data')) {
+      console.log('check');
+      let temp = localStorage.getItem('input_data');
+      input_data = JSON.parse(temp);
+    }
+    init = false;
+    console.log(init);
+    console.log(input_data)
+  }
+  init
+  function result() {
+    localStorage.setItem('input_data', JSON.stringify(input_data));
+    document.querySelector('.result').innerHTML = input_data.length == 0 ? "삭제할 값이 없습니다" : String(input_data);
+  }
+  result();
+  document.querySelector('.save button').addEventListener('click', () => {
+    let data = document.querySelector('.save input').value;
+    if (!data.trim()) {
+      alert('빈 값입니다')
+      return;
+    }
+    if (input_data.find(str => str === data)) {
+      alert('이미 있는 값입니다')
+      document.querySelector('.save input').value = '';
+      return;
+    }
+    input_data.push(data);
+    document.querySelector('.save input').value = '';
+    result()
+  })
+
+  document.querySelector('.delete button').addEventListener('click', () => {
+    if (input_data.length == 0) {
+      alert('삭제 가능 데이터 없음');
+      return;
+    }
+    let data = document.querySelector('.delete input').value;
+    if (!data.trim()) {
+      alert('빈 값입니다')
+      return;
+    }
+    if (!input_data.find(str => str === data)) {
+      alert('없는 값입니다')
+      document.querySelector('.delete input').value = '';
+      return;
+    }
+    let temp = input_data.filter((e) => e !== data);
+    input_data = [...temp];
+    // for (let i = 0; i < input_data.length; i++) {
+    //   if (input_data[i] === data) {
+    //     input_data.splice(i, 1);
+    //     i--;
+    //   }
+    // }
+    document.querySelector('.delete input').value = '';
+    result()
+  })
+
+
+</script>

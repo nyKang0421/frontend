@@ -1,0 +1,209 @@
+/* google web font */
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500&display=swap');
+/* Fontawesome 4.7 */
+@import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+/* reset CSS */
+*{
+    box-sizing: border-box;
+}
+a{ text-decoration: none; color: #222;}
+h1,h2,h3,h4,h5,h6{font-weight: normal;}
+button{ cursor: pointer; outline: none; border: none;}
+/* body font-fmaily를 상속받지 않는 태그들  */
+button,input,textarea{font-family: 'Montserrat', sans-serif;}
+
+body{
+    margin: 0;;
+    height: 100vh;
+    font-family: 'Montserrat', sans-serif;
+}
+
+section{
+    width: 950px;
+    margin: auto;
+}
+nav{
+    height: auto;
+    /* border: 1px solid red; */
+    padding: 10px;
+}
+nav .gnb{
+    padding: 30px;
+    text-align: right;
+}
+.gnb a{
+    text-transform: capitalize;
+    margin: 15px;
+    position: relative;
+}
+/* 가상선택자는 content필요 */
+.gnb a::after{
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    height: 2px;
+    width: 0;
+    background-color: #222;
+    transform: translateX(-50%);
+    transition: 0.3s;
+}
+
+.gnb a:hover::after{
+    width: 100%;
+}
+
+.gnb a:last-child{
+    margin-right: 0px;
+}
+.search-box{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+.search-box input{
+    border: none;
+    border-bottom: 1px solid #ddd;
+    padding: 5px;
+    width: 300px;
+    font-size: 18px;
+    /* url 이미지를 반복없이 한개만 가져와서 오른쪽 정렬 */
+    background: url(./images/search.png) no-repeat right;
+    /* css url 이미지값 주면 포토샵 없이 size 줄일 수 있다 */
+    background-size: 22px;
+}
+.search-box input:focus::placeholder{
+    /* 입력 창 클릭시 기존 안내글(Search) 사라지게 */
+    /* opacity: 0; */
+    visibility: hidden;
+}
+.search-box button{
+    background-color: crimson;
+    color: #fff;
+    border-radius: 6px;
+    padding: 13px 60px;
+    font-size: 18px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.items{
+    /* border: 1px solid blue; */
+    display: flex;
+    flex-wrap: wrap;
+}
+.items .item{
+    margin: 3px;
+    width: 310px;
+    height: 200px;
+    overflow: hidden;
+}
+
+.item:nth-child(1){
+    margin-top: 0;
+}
+.item:nth-child(2){
+    margin-top: 0;
+}
+.item:nth-child(3){
+    margin-top: 0;
+}
+
+.item img{
+    width: 100%;
+}
+
+.desc{
+    background-color: rgba(0, 0, 0, 0.3);
+    height: 60px;
+    width: 100%;
+    color: #fff;
+}
+.desc h6{
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+.desc .like{
+    display: flex;
+    justify-content: space-between;
+}
+.like span{}
+i.fa-heart{
+    color: crimson;
+}
+
+/* 모바일 환경 */
+@media screen and (max-width: 767px){
+    section{
+        width: 100%;
+    }
+
+    nav .gnb{
+        font-size: 13px;
+        text-align: center;
+    }
+    .search-box{
+        flex-direction: column;
+    }
+    .search-box input{
+        width: 100%;
+        font-size: 14px;
+        background-size: 18px;
+        margin-bottom: 15px;
+    }
+    .search-box button{
+        border-radius: 4px;
+        padding: 8px 40px;
+        font-size: 12px;
+        box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.5);
+    }
+    
+
+    .items{
+        justify-content: center;
+    }
+    .items .item{
+        width: 100%;
+        height: 100%;
+    }
+    .item:nth-child(3){
+        margin-top: 3px;
+    }
+}
+
+
+
+/*테블릿 환경*/
+@media screen and (min-width:768px) and (max-width: 1024px){
+    section{
+        width: 640px;
+    }
+    nav{
+        font-size: 0.7em;
+    }
+    
+    .search-box input{
+        padding: 3px;
+        width: 200px;
+        font-size: 12px;
+        background-size: 14px;
+    }
+    .search-box button{
+        border-radius: 4px;
+        padding: 8px 40px;
+        font-size: 12px;
+        box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.5);
+    }
+
+    .items{
+        justify-content: center;
+    }
+    .items .item{
+        height: 160px;
+    }
+    .item:nth-child(3){
+        margin-top: 3px;
+    }
+}
+
+
+

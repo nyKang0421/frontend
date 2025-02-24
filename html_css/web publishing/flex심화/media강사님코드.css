@@ -1,0 +1,82 @@
+/* reset CSS */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  a{ text-decoration: none; color: #222;}
+  h1,h2,h3,h4,h5,h6{font-weight: normal;}
+  button{ cursor: pointer; outline: none; border: none;}
+  
+  body{
+    height: 100vh;
+    font-size: 15px;
+  }
+  section{
+    /* border: 1px solid red; */
+    display: flex;
+    justify-content: space-between;
+  }
+  .media{
+    background-color: #eee;
+    /* border: 1px solid black; */
+    /* margin: 10px; */
+    width: 600px;
+    display: flex;
+    padding: 10px;
+  }
+  .media img{
+    width: 100px;
+    /* height: 100px; */
+    margin-right: 10px;
+  }
+  .media-body{
+  
+  }
+  .media-body h3{
+    margin-bottom: 5px;
+    font-weight: 600;
+  }
+  .media-body p{}
+  
+  /* 
+  이미지 선택 크기보다 사이즈보다 훨씬 큰 이미지로
+  사용 하고 작게 줄여서 사용하는 것이 좋다
+  작은이미지 => 이미지 깨짐 현상  
+  */
+  
+  /* 테블릿 환경 */
+  @media screen and (min-width:768px) and (max-width: 1024px){
+  
+    section{
+      flex-direction: column;
+    }
+    .media{
+      width: 100%;
+      margin-top: 10px;
+    }
+    .media:first-child{
+      margin-top: 0;
+    }
+    .media img{
+      width: 30%;
+    }
+  }
+  /* 모바일환경 */
+  @media screen and (max-width: 767px){
+    section{
+      flex-direction: column;
+    }
+    .media{
+      width: 100%;
+      margin-top: 10px;
+      flex-direction: column;
+    }
+    .media:first-child{
+      margin-top: 0;
+    }
+    .media img{
+      width: 100%;
+      margin-bottom: 15px;
+    }
+  }

@@ -1,0 +1,435 @@
+/* google web font */
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500&display=swap');
+/* Fontawesome 4.7 */
+@import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+/* reset CSS */
+*{
+    box-sizing: border-box;
+}
+a{ text-decoration: none; color: #222;}
+h1,h2,h3,h4,h5,h6{font-weight: normal;}
+button{ cursor: pointer; outline: none; border: none;}
+ul{margin: 0; padding: 0; text-decoration: none; list-style: none;}
+/* body font-fmaily를 상속받지 않는 태그들  */
+button,input,textarea{
+    font-family: 'Montserrat', sans-serif;
+    outline: none;
+}
+
+body{
+    margin: 0;;
+    height: 100vh;
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.5em;
+}
+.container{
+    height: 100%;
+}
+/* common css */
+.inner{
+    /* border: 2px solid blue; */
+    width: 1300px;
+    margin: auto;
+}
+/* header */
+/* position은 값을 주면 innerblock으로 변경 => 다시 width 값을 줘야함 */
+header{
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+
+.banner{
+    background-color: black;
+    height: 40px;
+    /* color: white; */
+    display: flex;
+    align-items: center;
+}
+.lnb{
+    /* border: 2px solid red; */
+    width: 1300px;
+    margin: auto;
+    text-align: right;
+}
+.lnb a{
+    color: #ddd;
+    margin: 5px;
+}
+.lnb a:last-child{
+    margin: 0;
+}
+.lnb em{
+    color: #bbb;
+}
+
+nav{
+    
+
+}
+nav .inner{
+    display: flex;
+    justify-content: space-between;
+}
+.logo{
+    margin: 10px;
+}
+.gnb{
+    display: flex;
+    /* border: 1px solid green; */
+    align-items: center;
+}
+.gnb a{
+    margin: 20px;
+}
+
+.gnb li a:last-child{
+    margin-right: 0;
+}
+.gnb li a:hover{
+    color: red;
+}
+
+
+
+/* main , intro */
+main{
+    /* border: 2px solid green; */
+    height: 70vh;
+    background: url(images/intro.jpg) no-repeat center center;
+    background-size: cover;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+main .inner{
+    /* border: 1px solid red; */
+    color: #fff;
+    text-align: center;
+}
+.heading{}
+.heading h1{
+    /* border: 1px solid black; */
+    font-size: 56px;
+    margin-bottom: 30px;
+}
+.heading p{
+    font-size: 22px;
+    line-height: 1.5em;
+    padding: 0 150px;
+    font-weight: 300;
+}
+
+
+/* about */
+.about{}
+.about-content{
+    /* border: 2px solid red; */
+    display: flex;
+    /* 고정 높이 값을 주면 나중에 반응형에서 hight: auto 로 변경 해주는 것이 번거롭기 때문에 간단하게 padding 으로 값주기 */
+    padding: 50px;
+    text-align: center;
+}
+.about-content div{
+    padding: 30px;
+}
+
+.desc{
+    /* border: 2px solid green; */
+    flex: 3;
+    padding: 150px 0;
+}
+.desc h2{
+    /* normal : 400 , bold : 500 */
+    /* font-weight: bold; */
+    font-weight: 500;
+    padding: 10px;
+}
+.desc p{
+    font-size: 16px;
+    line-height: 1.7em;
+    margin-bottom: 30px;
+}
+.desc a{
+    color: rgb(243, 107, 58);
+    font-weight: bold;
+}
+
+.desc a:hover{
+    text-decoration: underline;
+}
+
+.photo{
+    /* border: 2px solid blue; */
+    flex: 2;
+    padding-top: 150px;
+}
+.photo img{
+    width: 100%;
+    border-radius: 40% 60% 65% 35% / 35% 45% 55% 60%;
+}
+
+/* ranking */
+/* 연한 배경색 gf1 ~ f9 */
+.ranking{
+    /* border: 2px soild blue; */
+    background-color: #f9f9f9;
+}
+.ranking-content{
+    padding: 100px 0;
+}
+.ranking-content h2{
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 50px;
+}
+.items{
+    display: flex;
+    justify-content: space-around;
+}
+.item{
+    /* border: 2px solid green; */
+    width: 390px;
+    height: 620px;
+    border-radius: 30px 0 30px 0;
+    box-shadow:  5px 5px 20px 5px #00000073;
+    overflow: hidden;
+}
+
+.up-img{
+    width: 100%;
+    height: 300px;
+}
+/* 가로 짤리면 가로 100% 세로 짤리면 세로 100% */
+.up-img img{
+    height: 100%;
+}
+.down-desc{
+    /* border: 2px solid green; */
+    padding: 25px;
+}
+.down-desc span{}
+.down-desc .badge{
+    background-color: pink;
+    padding:  2px 10px;
+    font-size: 16px;
+    color: #fff;
+}
+.badge.must{
+    background-color: crimson;
+}
+.badge.good{
+    background-color: royalblue;
+}
+.down-desc h3{
+    margin-top: 5px;
+    font-size: 22px;
+}
+.down-desc p{}
+.btn-explore{
+    border: 2px soild red;
+    color: #c25a3a;
+    font-weight: 500;
+}
+
+.btn-explore img{
+    transition: 0.5s;
+}
+
+.btn-explore:hover img{
+    /* transform: translateX(15px); */
+    margin-left: 15px;
+}
+
+
+/* testmonial */
+.testimonial{
+    padding: 100px 0;
+}
+.testimonial-content{
+    text-align: center;
+}
+.testimonial-content h2{
+    text-transform: uppercase;
+    font-size: 30px;
+    font-weight: 300;
+}
+.testimonial-content hr{
+    border: none;
+    background-color: royalblue;
+    height: 4px;
+    width: 120px;
+    margin: 30px auto;
+}
+.myslider{
+    /* border: 2px solid green; */
+}
+.myslider .client{
+    /* border: 2px solid red; */
+    height: 300px;
+}
+.client-img{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.client-img img{
+    width: 85px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+.client-img span{
+    line-height: 1.7em;
+}
+.client-img span b{
+    display: block;
+}
+.client-comment{
+    padding: 10px;
+    line-height: 1.7em;
+}
+
+/* callaction */
+.callaction{
+    height: 450px;
+    background: url(images/callaction-01.jpg) no-repeat center center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.callaction::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right bottom, rgba(78,0,78,0.4), rgba(104,104,1,0.4));
+}
+
+.callaction-heading{
+    color: #fff;
+    text-align: center;
+    z-index: 100;
+}
+.callaction-heading h2{
+    font-size: 48px;
+    font-weight: 300;
+    /* 글자 세로 사이 간격 */
+    line-height: 1.3em;
+    margin-bottom: 30px;
+    /* 글자 가로 사이 간격 */
+    letter-spacing: 5px;
+}
+.callaction-heading span{
+    font-weight: 500;
+}
+.callaction-heading a{
+    color: #fff;
+    background-color: #109e4b;
+    /* width: 100px;
+    height: 300px;
+    display: inline-block; */
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 18px;
+}
+
+.callaction-heading a:hover{
+    background-color: orange;
+}
+
+/* blog */
+.blog{}
+/* festival */
+.festival{
+    height: 270px;
+    background-color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.festival-heading{
+    text-align: center;
+}
+.festival-heading h3{
+    color: #fff;
+    font-size: 26px;
+    font-weight: 200;
+    margin-bottom: 30px;
+    /* letter-spacing: 3px; */
+}
+.festival-heading span{
+    font-weight: 500;
+}
+.btns{}
+.btns a{
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+}
+.btns a:hover{
+    font-size: 20px;
+}
+.btns a:first-child{
+    background-color: orange;
+    color: #fff;
+}
+.btns a:last-child{
+    background-color: #ededed;
+    color: #222;
+}
+
+footer{
+    background-color: #000;
+    padding: 30px;
+}
+
+.footer-content{
+    /* border: 2px solid red; */
+    display: flex;
+    text-align: center;
+    color: #959595;
+}
+.footer-content ul li{
+}
+.footer-content ul li:first-child{
+    font-weight: 500;
+    color: #d9d9d9;
+}
+.footer-content ul li a{
+    color: #959595;
+}
+.footer-content ul li a:hover{
+    text-decoration: underline;
+}
+
+.community{
+    flex: 1;
+}
+.network{
+    flex: 1;
+}
+.help{
+    flex: 2;
+}
+
+.goToTop{
+    background-color: skyblue;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    /* padding: 30px; */
+
+    text-align: center;
+    line-height: 50px;
+    font-size: 32px;
+    color: white;
+}
+
+

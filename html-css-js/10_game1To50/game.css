@@ -1,0 +1,98 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  /* border: 2px solid red; */
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 60px 1fr;
+}
+
+header{
+  /* border: 2px solid orange; */
+  display: flex;
+  justify-content: center;
+  align-items: end;
+
+}
+.timer{
+  /* border: 2px solid crimson; */
+  padding: 5px 0;
+  width: 40%;
+  text-align: center;
+  background-color: skyblue;
+  font-weight: bold;
+  font-size: 1.5em;
+}
+.main{
+  /* border: 2px solid green; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+.board{
+  /* border: 1px solid black; */
+  /* padding: 10px; */
+  height: 80%;
+  width: 80%;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+}
+.board div{
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: royalblue;
+  color: #fff;
+  font-weight: bolder;
+  font-size: 1.3em;
+  cursor: pointer;
+}
+
+.board div:hover{
+  background-color: palevioletred;
+}
+
+.hidden{
+  display: none;
+}
+
+.last{
+  visibility: hidden;
+}
+
+div .hint{
+  background-color: pink;
+}
+
+.finish{
+  /* border: 1px solid orange; */
+  text-align: center;
+}
+.finish .msg{
+  /* border: 1px solid green; */
+  margin-bottom: 50px;
+  text-align: center;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: skyblue;
+  font-size: 3em;
+}
+#reset{
+  background-color: lightpink;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 2em;
+  cursor: pointer;
+}
+
+#reset:hover{
+  background-color: palevioletred;
+}

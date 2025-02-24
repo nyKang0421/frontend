@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ex05</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      display: flex;
+      width: 100vw;
+      height: 100vh;
+      background-color: lightgray;
+    }
+
+    .container .grid {
+      flex: 4;
+      padding: 10px;
+      background-color: pink;
+      display: grid;
+      gap: 10px;
+      grid-template-columns: repeat(4, 1fr);
+      grid-auto-rows: 50px;
+      overflow: scroll;
+    }
+
+    .grid .box {
+      height: 50px;
+      background-color: blueviolet;
+      color: #fff;
+      text-align: center;
+      line-height: 50px;
+    }
+
+    .container nav {
+      flex: 1;
+      text-align: center;
+    }
+
+    nav button {
+      margin: 10px;
+      padding: 30px 40px;
+      background-color: royalblue;
+      border: none;
+      color: #fff;
+      font-size: 1.2em;
+      cursor: pointer;
+    }
+
+    nav button:hover {
+      background-color: purple;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="grid">
+      <div class="box">서울</div>
+      <!-- <div class="box">충주</div>
+      <div class="box">부산</div>
+      <div class="box">대구</div>
+      <div class="box">경기</div>
+      <div class="box">광주</div>
+      <div class="box">광양</div>
+      <div class="box">제주</div>
+      <div class="box">제주</div> -->
+    </div>
+    <nav><button>추가하기</button></nav>
+  </div>
+</body>
+
+</html>
+
+<script>
+  let data = ["충주", "부산", "대구", "경기", "광주", "광양", "제주", "용인"];
+  let clickable = true;
+  document.querySelector('button').addEventListener('click', () => {
+    if (clickable != true) return;
+    clickable = false;
+    let time = 500;
+    data.forEach(str => {
+      setTimeout(() => {
+        let div = document.createElement('div');
+        div.classList.add('box');
+        div.innerHTML = str;
+        document.querySelector('.grid').appendChild(div);
+      }, time)
+      time += 500;
+    })
+  })
+  // document.querySelector('button').addEventListener('click', () => {
+  //   if(clickable != true) return;
+  //   clickable = false;
+  // })
+</script>

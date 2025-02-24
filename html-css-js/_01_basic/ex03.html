@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ex01</title>
+  <style>
+    .box {
+      background-color: yellow;
+      width: 150px;
+      height: 150px;
+      margin-bottom: 10px;
+      /* transition: 1s; */
+    }
+
+    .msg {
+      border: 1px solid blue;
+      width: 300px;
+      height: 100px;
+      font-size: 1.3em;
+      line-height: 100px;
+      text-align: center;
+      margin: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box"></div>
+  <div class="msg">네모 이벤트 처리값</div>
+  <button id="btn-grow">네모 키우기</button>
+  <button id="btn-rotate">네모 회전하기</button>
+</body>
+
+</html>
+
+<script>
+  const box = document.querySelector('.box');
+  const msg = document.querySelector('.msg');
+  const btn1 = document.querySelector('#btn-grow');
+  const btn2 = document.querySelector('#btn-rotate');
+
+  box.addEventListener("mouseover", () => {
+    box.style.transform = 'translateX(200px)';
+    box.style.transition = '1s';
+    msg.innerHTML = '네모 움직임'
+  })
+
+  box.addEventListener("mouseout", () => {
+    box.style.transform = 'translateX(0px)';
+    box.style.transition = '1s';
+    msg.innerHTML = '네모 돌아감'
+  })
+  let btn1State = "grow";
+
+  btn1.addEventListener("click", () => {
+    btn1State == "grow" ? grow() : reduce()
+  })
+
+  btn2.addEventListener('click', rotate);
+
+  function grow() {
+    box.style.transform = 'scale(1.2)';
+    box.style.transition = '1s';
+    msg.innerHTML = "네모 커짐"
+    btn1.innerHTML = '네모 줄이기'
+    btn1State = "rotate";
+  };
+
+  function reduce() {
+    box.style.transform = 'scale(1)';
+    box.style.transition = '1s';
+    msg.innerHTML = "네모 작아짐"
+    btn1.innerHTML = '네모 키우기'
+    btn1State = "grow"
+  };
+  function rotate() {
+    box.style.transform = 'rotate(90deg)';
+    box.style.transition = '1s';
+    msg.innerHTML = "네모 돌아감"
+    // function reset(){
+    //   box.style.transform = 'rotate(0deg)';
+    // };
+    // reset();
+  };
+
+
+
+
+
+
+
+</script>

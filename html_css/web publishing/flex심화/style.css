@@ -1,0 +1,138 @@
+/* google web font */
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500&display=swap');
+/* Fontawesome 4.7 */
+@import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+/* reset CSS */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+a{ text-decoration: none; color: #222;}
+h1,h2,h3,h4,h5,h6{font-weight: normal;}
+button{ cursor: pointer; outline: none; border: none;}
+
+body{
+    font-family: 'Montserrat', sans-serif;
+    height: 100vh;
+    background-color: #222;
+}
+header{
+    height: 60px;
+    background-color: #6c5ce7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+nav{
+    width: 1280px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo{}
+.logo img{
+    width: 100px;
+    margin: 10px;
+    filter: invert();
+}
+.gnb{
+    display: flex;
+}
+.gnb a{
+    color: white;
+    text-transform: capitalize;
+    margin: 10px;
+}
+.sns{
+    display: flex;
+}
+
+.sns i{
+    padding: 10px;
+    color: white;
+}
+
+a:hover, i:hover{
+    color: bisque;
+}
+
+
+
+/* 모바일환경 */
+@media screen and (max-width: 767px){
+    header{
+        height: auto;
+    }
+    nav{
+        flex-direction: column;
+        width: 100%;
+        position: relative;
+    }
+    .logo{
+        width: 100%;
+    }
+    .gnb, .sns{
+        display: none;
+    }
+
+    .gnb.on, .sns.on{
+        display: flex;
+    }
+
+    .gnb{
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+    }
+    .sns{
+        width: 100%;
+        justify-content : center;
+        background-color: #a29bfa;
+    }
+
+    .trigger{
+        /* border: 1px solid bisque; */
+        width: 25px;
+        height: 15px;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        cursor: pointer;
+    }
+    .trigger span{
+        background-color: bisque;
+        height: 3px;
+        width: 100%;
+        position: absolute;
+        /* display: block; */
+        margin-bottom: 3px;
+        transition: 0.3s;
+    }
+
+    .trigger span:nth-child(1){
+        top:0%;
+    }
+    .trigger span:nth-child(2){
+        top:50%
+    
+    }
+    .trigger span:nth-child(3){
+        top:100%
+    }
+
+    .trigger.active span:nth-child(1){
+        transform: rotate(45deg);
+        top:50%;
+    }
+    .trigger.active span:nth-child(2){
+        /* 투명도를 0%으로 한다 */
+        opacity: 0;  
+    }
+    .trigger.active span:nth-child(3){
+        transform: rotate(-45deg);
+        top:50%
+    }
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 80%;
+            height: 800px;
+        }
+
+        ul {
+            display: grid;
+            height: 100%;
+            border: 2px solid red;
+
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+
+            align-items: center;
+        }
+
+        .item {
+            width: 100%;
+            background-color: pink;
+            border: 1px solid salmon;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 30px;
+        }
+
+        .grid :nth-child(2n) {
+            background-color: lightblue;
+            border: 1px solid cadetblue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <ul class="grid">
+            <li class="item">1</li>
+            <li class="item">2</li>
+            <li class="item">3</li>
+            <li class="item">4</li>
+            <li class="item">5</li>
+        </ul>
+    </div>
+</body>
+
+</html>

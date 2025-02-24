@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>실행환경보기</title>
+  <script defer src="ex27_context2.js"></script>
+  <!-- 위의 defer는 모든 코드가 실행하고 진행한다는 뜻으로 반듯이 붙여 줘야 한다 -->
+</head>
+
+<body>
+
+</body>
+
+</html>
+
+<script>
+  // // 전역 스코프 == 글로벌 스코프
+  // let x = 'global x';
+  // let y = 'global y';
+
+  // // 함수 스코프 == 지역 스코프
+  // function outer() {
+  //   let z = 'local z';
+  //   console.log('outer 영역이야');
+  //   function inner() {
+  //     let x = 'local x';
+  //     console.log('inner 영역이야')
+  //   }
+  //   inner();
+  // }
+
+  // console.log("global 영역이야");
+  // outer();
+
+  let num1 = 10;
+  let num2 = 20;
+
+  function add(x, y) {
+    let result = x + y;
+    return result;
+  }
+
+  let mulply = (x, y) => x * y;
+
+  let res1 = add(num1, num2);
+  let res2 = mulply(num1, num2);
+
+</script>

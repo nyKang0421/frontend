@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:300,400,500,700,700&display=swap');
+/* Fontawesome 4.7 */
+@import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+/* reset CSS */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+a{ text-decoration: none; color: #222;}
+h1,h2,h3,h4,h5,h6{font-weight: normal;}
+button{ cursor: pointer; outline: none; border: none;}
+input,textarea,select{
+    outline: none;
+}
+
+body{
+    height: 100vh;
+    font-family: 'Noto Sans KR' , sans-serif;
+    font-size: 15px;
+    font-weight: 300;
+}
+
+button,input,textarea,select{
+    font-family: 'Noto Sans KR' , sans-serif;
+}
+/* 
+인라인요소 - width hight 크기값 사용불가 마진불가
+인라인블럭 요소- width hight 크기값 사용가능 , 마진 auto불가 : 컨텐츠 영역 블럭으로 차지 
+블럭요소 - 한줄 다 차지 마진 auto 
+*/
+
+section{
+    width: 1200px;
+    border: 1px solid black;
+    margin: auto;
+}
+/* consulting-header */
+.consulting-header{
+  /* border: 1px solid red; */
+    text-align: center;
+    margin-top: 20px;
+}
+.consulting-header h1 {
+    font-size: 32px;
+}
+.consulting-header span {
+    color: crimson;
+}
+.consulting-header hr{
+    border: none;
+    width: 100px;
+    height: 2px;
+    background-color: skyblue;
+    margin: 10px auto;
+}
+
+/* consulting-form */
+.consulting-form{
+    border-top: 5px solid #ddd;
+    margin-top: 10px;
+    padding: 10px;
+}
+form{
+    padding: 30px;
+}
+.row{
+    display: flex;
+  /* border: 1px solid red; */
+}
+.row .field{
+  /* border: 1px solid blue; */
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+}
+.field label{
+    font-weight: 500;
+}
+label em{
+    color: crimson;
+}
+.field input,
+.field select,
+.field textarea{
+    border: 1px solid #ddd;
+    padding: 7px;
+}
+
+.field input:hover,
+.field select:hover,
+.field textarea:hover,
+.field input:focus,
+.field textarea:focus 
+{
+    border: 1px solid skyblue;
+    box-shadow: 0 0 5px skyblue;
+}
+/* policy */
+.policy{
+    margin: 10px 0;
+  /* border: 1px solid red; */
+}
+.policy h4{
+    margin: 10px;
+}
+/* iframe 외부 html 문서를 내부 html 안으로 넣어주는것  */
+.policy iframe{
+    margin: 0 10px;
+    border: 1px solid #ddde;
+    width: 100%;
+  /* iframe 내부 디자인 불가 , 외부 화면만 조절할 수 있다  */
+    padding: 7px;
+    border-radius: 3px;
+    height: 100px;
+}
+.agreement{
+    margin: 10px;
+}
+
+.btn-submit{
+  /* border: 1px solid red; */
+    padding: 10px 50px;
+    border-radius: 3px;
+    background-color: skyblue;
+    margin: 10px;
+    display: block;
+    margin: auto;
+}
+.btn-submit:hover{
+    background-color: royalblue;
+    color: #fff;
+}
+
+/* 모바일 */
+@media screen and (max-width: 767px){
+    section{
+    width: 100%;
+    }
+    .consulting-header h1 {
+    font-size: 22px;
+    }
+    form .row{
+    flex-direction: column;
+    }
+    .row .field{
+    margin: 5px 0;
+    }
+    .policy iframe{
+    margin: 5px 0;
+    }
+    .btn-submit{
+    width: 100%;
+    }
+}
